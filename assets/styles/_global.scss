@@ -1,0 +1,79 @@
+@import 'vars';
+
+html {
+  width: 100%;
+
+  &.fixed-body {
+    overflow-y: hidden;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.m-page {
+  width: calc(100vw - (100vw - 100%));
+  overflow-x: hidden;
+  font-family: $font1;
+  font-size: calc(1480px * (16 / 1480));
+  font-weight: 400;
+  color: $black;
+
+  @media screen and (width <= 1480px) {
+    font-size: calc(100vw * (16 / 1480));
+  }
+
+  &.fixed-body,
+  &.fixed-body2 {
+    padding-right: var(--scroll-width);
+    overflow-y: hidden;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1480px;
+  padding: 0 2.5em;
+  margin: 0 auto;
+}
+
+a {
+  &:hover {
+    color: $primary;
+  }
+}
+
+@media screen and (width <= 992px) {
+  .m-page {
+    font-size: calc(100vw * (16 / 428));
+
+    @media screen and (width >= 577px) {
+      font-size: calc(100vw * (16 / 768));
+    }
+  }
+
+  .container {
+    padding: 0 1.25em;
+  }
+}
+
+@media screen and (width <= 427px) {
+  .m-page {
+    font-size: calc(100vw * (16 / 320));
+  }
+
+  .container {
+    padding: 0 0.9375em;
+  }
+}

@@ -1,0 +1,337 @@
+.profile-item {
+  padding: 1.875em;
+  background-color: #fff;
+  border-radius: 0.4375em;
+
+  @include last-m(0 0 1.6875em);
+
+  &__top {
+    padding: 0 0 1.25em;
+    border-bottom: $border;
+  }
+
+  &__bottom {
+    padding-top: 1.875em;
+
+    @media screen and (width >= 993px) {
+      &._pt0 {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - 0.9375em));
+    gap: 1.25em 1.875em;
+    max-width: 58em;
+    margin-top: 1.875em;
+
+    &._type2 {
+      @media screen and (width >= 993px) {
+        grid-template-columns: 100%;
+
+        .fg {
+          max-width: calc(50% - 0.9375em);
+        }
+      }
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    margin-top: 1.875em;
+  }
+
+  &__btn {
+    width: 13.375em;
+    height: 3.75em;
+  }
+
+  &__ask {
+    @include grid100gap(0.25em);
+  }
+}
+
+.photo-field {
+  display: flex;
+  align-items: center;
+
+  .avatar {
+    width: 5.625em;
+    height: 5.625em;
+    margin-right: 1.3125em;
+  }
+
+  &__action {
+    display: flex;
+  }
+
+  &__btn {
+    height: 2.5em;
+    padding: 0 1.25em;
+    background-color: $primary-white;
+    border-radius: 0.25em;
+
+    @include last-m(0 0.625em 0 0);
+
+    &:hover {
+      color: $primary;
+
+      path {
+        fill: $primary;
+      }
+    }
+
+    svg {
+      width: 1.375em;
+    }
+  }
+
+  &__delete {
+    width: 2.5em;
+    padding: 0;
+  }
+
+  &__desc {
+    margin-top: 0.625em;
+  }
+}
+
+.project-files {
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -1em;
+  }
+
+  &__hint {
+    margin-top: 1.25em;
+    font-weight: 300;
+    color: $gray;
+  }
+}
+
+.file-item,
+.file-input {
+  width: 13.125em;
+  margin: 1em 1.75em 0 0;
+}
+
+.file-item {
+  padding: 1em 1em 1em 1.25em;
+  background-color: $primary-white;
+  background-image: url('assets/img/file.svg');
+  background-repeat: no-repeat;
+  background-position: right 1.38em bottom 0;
+  background-size: 3.375em auto;
+  border-radius: 0.25em;
+
+  &__title {
+    overflow: hidden;
+    font-size: 0.875em;
+    line-height: 200%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__bottom {
+    display: flex;
+    margin-top: -0.25em;
+  }
+
+  &__weight,
+  &__btn,
+  &__format {
+    font-size: 0.875em;
+    font-weight: 500;
+    line-height: 200%;
+    color: $primary;
+  }
+
+  &__weight {
+    margin-left: 1.21em;
+    color: #babfe4;
+  }
+}
+
+.file-input {
+  height: 5.5em;
+  min-height: 100%;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &__wrap {
+    @include center;
+
+    width: 100%;
+    height: 100%;
+    border: 1px dashed $primary;
+    border-radius: 0.5em;
+  }
+
+  &__title {
+    font-size: 0.9375em;
+    font-weight: 500;
+    line-height: 185%;
+    color: $primary;
+  }
+}
+
+@media screen and (width <= 992px) {
+  .profile-item {
+    padding: 0;
+
+    @include last-m(0 0 1.25em);
+
+    &__top {
+      padding: 0.69em 1.06em 0.75em;
+      border-bottom: $border;
+
+      .text17 {
+        font-size: 1em;
+        line-height: 175%;
+      }
+    }
+
+    &__bottom {
+      padding: 1.125em 1.06em 0.94em;
+    }
+
+    &__grid {
+      grid-template-columns: 100%;
+      gap: 1.125em;
+      margin-top: 2em;
+    }
+
+    &__nav {
+      margin-top: 0.81em;
+
+      .m-btn {
+        width: 100%;
+        height: 3.125em;
+        padding: 0;
+      }
+    }
+  }
+
+  .file-item {
+    width: 11.875em;
+    padding: 0.75em 0.5em 0.25em 1em;
+    margin: 1em 0.625em 0 0;
+    background-position: right 1.38em bottom -1em;
+
+    &__title,
+    &__format {
+      font-size: 0.8125em;
+    }
+  }
+}
+
+@media screen and (width <= 576px) {
+  .photo-field {
+    position: relative;
+
+    .avatar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4.375em;
+      height: 4.375em;
+    }
+
+    &__action {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 5.5em;
+    }
+
+    &__btn {
+      @include last-m(0.625em 0 0);
+
+      height: 1.875em;
+      padding: 0 0.75em;
+
+      span {
+        font-size: 0.75em;
+      }
+
+      svg {
+        width: 1.125em;
+      }
+    }
+
+    &__delete {
+      order: 2;
+      width: 1.875em;
+      padding: 0;
+    }
+
+    &__desc {
+      margin-top: 0.875em;
+
+      .text15 {
+        font-size: 0.6875em;
+        line-height: 145%;
+      }
+    }
+  }
+
+  .project-files {
+    padding-bottom: 0.3125em;
+
+    &__items {
+      display: grid;
+      grid-template-columns: repeat(2, calc(50% - 0.3125em));
+      gap: 0.625em;
+
+      .file-item {
+        width: 100%;
+        margin: 0 !important;
+      }
+    }
+
+    .project-files__items {
+      margin-top: 0;
+    }
+
+    &__hint {
+      display: none;
+    }
+  }
+
+  .file-input {
+    grid-column: 1/-1;
+    width: 100%;
+    height: 4.125em;
+    min-height: unset;
+    margin: 0.5em 0 0;
+
+    &__title {
+      font-size: 0.875em;
+    }
+  }
+}
+
+@media screen and (width <= 427px) {
+  .project-files {
+    &__items {
+      grid-template-columns: 100%;
+      gap: 0.5em;
+    }
+
+    .project-files__items {
+      gap: 0.625em;
+    }
+  }
+
+  .file-item {
+    background-position: right 1.37em bottom 0;
+  }
+}

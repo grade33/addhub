@@ -1,0 +1,164 @@
+@use 'sass:color';
+@import '../vars';
+
+.m-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.875em;
+  padding: 0 2.19em;
+  overflow: hidden;
+  font-weight: 500;
+  border-radius: 0.25em;
+  transition: all ease-out 0.225s;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 0;
+    height: 100%;
+    content: '';
+    transition: all 0.4s ease;
+    transform: skew(50deg);
+    transform-origin: top left;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  span {
+    font-size: 0.9375em;
+    line-height: 140%;
+  }
+
+  span,
+  img,
+  svg {
+    position: relative;
+    z-index: 2;
+  }
+
+  &:hover {
+    &::before {
+      width: 200%;
+      height: 100%;
+    }
+  }
+}
+
+.m-btn-blue {
+  color: #fff;
+  background-color: $primary;
+
+  &::before {
+    background-color: #7078ff;
+  }
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.m-btn-red {
+  color: #fff;
+  background-color: #d64c4c;
+
+  &::before {
+    background-color: color.adjust(#d64c4c, $lightness: -10%);
+  }
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.m-btn-white {
+  color: $black;
+  background-color: #fff;
+
+  &:hover {
+    color: $black;
+  }
+
+  &::before {
+    background-color: #e3e6ff;
+  }
+}
+
+.m-btn-gray {
+  color: #fff;
+  background-color: #505050;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &::before {
+    background-color: #6c6c6c;
+  }
+}
+
+.m-btn-blue-outline {
+  color: $primary;
+  border: 2px solid $primary;
+
+  &:hover {
+    color: $primary;
+  }
+
+  &::before {
+    background-color: #e3e6ff;
+  }
+}
+
+.m-btn-blue2,
+.m-btn-blue3 {
+  color: $primary;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &::before {
+    background-color: $primary;
+  }
+}
+
+.m-btn-blue2 {
+  background-color: rgb(163 140 230 / 18%);
+}
+
+.m-btn-blue3 {
+  background-color: $primary-white;
+}
+
+.hover-fill-primary {
+  &:hover {
+    path {
+      fill: $primary;
+    }
+  }
+}
+
+.m-btn-shadow {
+  font-weight: 700;
+  box-shadow: $shadow3;
+}
+
+@media screen and (width <= 992px) {
+  .m-btn {
+    height: 3.125em;
+    padding: 0 1em;
+
+    span {
+      font-size: 0.875em;
+    }
+  }
+
+  .m-btn-shadow {
+    font-weight: 500;
+  }
+}

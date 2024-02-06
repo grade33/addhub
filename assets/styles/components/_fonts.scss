@@ -1,0 +1,5 @@
+@import '../mixins';
+@include font-face('Navigo', 'Navigo-Light', 300);
+@include font-face('Navigo', 'Navigo-Regular', 400);
+@include font-face('Navigo', 'Navigo-Medium', 500);
+@include font-face('Navigo', 'Navigo-Bold', 700);

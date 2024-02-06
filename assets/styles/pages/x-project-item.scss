@@ -1,0 +1,624 @@
+.attached-files {
+  padding-top: 3.75em;
+  margin-top: 2em;
+  border-top: $border;
+
+  .project-files__items {
+    margin-top: 0.75em;
+  }
+
+  .file-item {
+    margin-right: 1.25em;
+  }
+}
+
+.freelancer-req {
+  margin-top: 2em;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - 0.875em));
+    gap: 1.25em 1.75em;
+    margin-top: 1.75em;
+  }
+
+  &__items {
+    margin-top: 3.75em;
+
+    @include grid100gap(1.25em);
+  }
+}
+
+.req-answer {
+  &__inner {
+    display: flex;
+    padding: 2.37em 1.875em 2em;
+    border: $border;
+    border-radius: 0.25em;
+    transition: all 0.3s;
+  }
+
+  ._check {
+    z-index: 1;
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.75em;
+    border: 1px solid #1f4b3f;
+    border-radius: 0.25em;
+    transition: all 0s;
+
+    @include bg-img-size(0);
+  }
+
+  input:checked ~ .req-answer__inner {
+    background-color: $primary-white;
+    border-color: $primary;
+    outline: 1px solid $primary !important;
+
+    ._check {
+      background-color: $primary;
+      background-image: url('assets/img/check3.svg');
+      background-size: 0.5em auto;
+      border-color: $primary;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title,
+  &__desc {
+    font-size: 0.9375em;
+    line-height: 187%;
+  }
+
+  &__price {
+    font-weight: 700;
+
+    span {
+      font-size: 1.75em;
+      line-height: 130%;
+    }
+  }
+}
+
+.freelancer-offers {
+  padding-top: 2.25em;
+  margin-top: 3.75em;
+  border-top: $border;
+
+  &__items {
+    margin-top: 1.81em;
+
+    @include grid100gap(1.875em);
+  }
+}
+
+.offer-card {
+  display: grid;
+  grid-template-columns: calc(100% - 11em) 10em;
+  gap: 0.19em 1em;
+  padding: 1.875em;
+  border: $border;
+  border-radius: 0.25em;
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  .avatar {
+    position: relative;
+    width: 5.625em;
+    height: 5.625em;
+    margin-right: 1.25em;
+  }
+
+  &__items {
+    display: flex;
+    margin-top: 0.5em;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    color: $gray;
+
+    &:not(:last-child) {
+      padding-right: 1.75em;
+      margin-right: 0.81em;
+      border-right: $border;
+    }
+
+    &._rating {
+      img {
+        width: 0.625em;
+        margin-right: 0.625em;
+      }
+
+      .offer-card__item-text {
+        span {
+          color: $black;
+        }
+      }
+    }
+
+    img {
+      width: 1.25em;
+      margin-right: 0.5em;
+    }
+
+    &-text {
+      font-size: 0.875em;
+      line-height: 143%;
+    }
+  }
+
+  &__nums {
+    text-align: right;
+  }
+
+  &__price {
+    font-size: 1.25em;
+    font-weight: 500;
+    line-height: 140%;
+  }
+
+  &__period {
+    font-size: 0.875em;
+    line-height: 200%;
+    color: $gray;
+  }
+
+  &__text {
+    grid-column: 1/-1;
+    max-width: 49em;
+    padding-left: 6.875em;
+  }
+
+  .service-card__user-online {
+    top: 0.81em;
+    right: -0.06em;
+    width: 1em;
+    height: 1em;
+    border-width: 2px;
+  }
+}
+
+.about-client,
+.offer-req {
+  background-color: #fff;
+  border: $border;
+  border-radius: 0.5em;
+  box-shadow: $shadow;
+}
+
+.offer-req {
+  position: relative;
+  z-index: 2;
+  padding: 1.37em 2.13em 1.94em;
+
+  &__btn {
+    width: 100%;
+    margin-top: 1.25em;
+  }
+
+  &__text {
+    @include grid100gap(0.31em);
+
+    padding-bottom: 1.625em;
+    border-bottom: $border;
+  }
+
+  &__title {
+    font-size: 1.0625em;
+    font-weight: 500;
+    line-height: 165%;
+  }
+
+  &__desc {
+    font-size: 0.875em;
+    font-weight: 300;
+    line-height: 157%;
+  }
+
+  &__items {
+    margin-top: 1.125em;
+
+    @include grid100gap(0.75em);
+  }
+
+  &__item {
+    display: flex;
+
+    &::before {
+      position: relative;
+      top: 0.25em;
+      width: 1.25em;
+      height: 1.25em;
+      margin-right: 0.875em;
+      content: '';
+      background-image: url('assets/img/check2.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% auto;
+    }
+
+    &-text {
+      padding-top: 0.5em;
+      font-size: 0.875em;
+      line-height: 150%;
+    }
+  }
+
+  &__duration {
+    display: flex;
+    align-items: center;
+    margin-top: 1.25em;
+    font-weight: 500;
+
+    img {
+      width: 1.4375em;
+      margin-right: 0.6875em;
+    }
+
+    span {
+      font-size: 0.875em;
+      line-height: 200%;
+    }
+  }
+}
+
+.about-client {
+  padding: 1.5em 1.875em 1.9375em;
+  margin-top: 1.875em;
+
+  &__info {
+    display: flex;
+    align-items: center;
+    margin-top: 1.25em;
+  }
+
+  .avatar {
+    position: relative;
+    width: 5.625em;
+    height: 5.625em;
+    margin-right: 1.25em;
+  }
+
+  .service-card__user-online {
+    top: 0.81em;
+    right: -0.06em;
+    width: 1em;
+    height: 1em;
+    border-width: 2px;
+  }
+
+  &__category {
+    font-size: 0.875em;
+    line-height: 150%;
+    color: $gray;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 0.625em;
+      margin-right: 0.625em;
+    }
+
+    &-text {
+      font-size: 0.875em;
+      font-weight: 300;
+      line-height: 187%;
+      color: $gray;
+
+      span {
+        font-weight: 500;
+        color: $black;
+      }
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, calc(100% / 3 - 1em / 3));
+    gap: 0.5em;
+    padding-top: 1.25em;
+    margin-top: 1.875em;
+    border-top: $border;
+  }
+
+  &__item {
+    &-title,
+    &-desc {
+      font-size: 0.9375em;
+      line-height: 150%;
+    }
+
+    &-title {
+      font-weight: 500;
+    }
+
+    &-desc {
+      font-weight: 300;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    height: 3.75em;
+    margin-top: 1.875em;
+    font-weight: 700;
+
+    span {
+      font-size: 0.875em;
+    }
+  }
+}
+
+@media screen and (width <= 992px) {
+  .freelancer-req {
+    padding-top: 2.625em;
+    margin-top: 1.75em;
+    border-top: $border;
+
+    &__grid {
+      grid-template-columns: repeat(2, calc(50% - 0.5em));
+      gap: 1em;
+      margin-top: 1em;
+    }
+
+    &__items {
+      gap: 0.625em;
+      margin-top: 0.875em;
+    }
+  }
+
+  .req-answer {
+    &__inner {
+      padding: 1.3125em;
+    }
+
+    &__title,
+    &__desc {
+      font-size: 0.75em;
+      line-height: 157%;
+    }
+
+    &__price {
+      span {
+        font-size: 1.25em;
+      }
+    }
+  }
+
+  .attached-files {
+    padding-top: 2em;
+    margin-top: 2em;
+  }
+
+  .freelancer-offers {
+    padding-top: 1.31em;
+    margin-top: 1.875em;
+
+    &__items {
+      gap: 1.38em;
+      margin-top: 1em;
+    }
+  }
+
+  .offer-card {
+    grid-template-columns: 100%;
+    gap: 1em;
+    padding: 0 0 1.75em;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+
+    .avatar {
+      width: 3.45em;
+      height: 3.45em;
+      margin-right: 1.35em;
+    }
+
+    &__name {
+      font-size: 0.875em;
+      line-height: 143%;
+    }
+
+    &__item {
+      &-text {
+        font-size: 0.75em;
+      }
+    }
+
+    &__nums {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      order: -1;
+      text-align: left;
+    }
+
+    &__price {
+      font-size: 1em;
+    }
+
+    &__text {
+      padding-left: 0;
+
+      .text15 {
+        font-size: 0.875em;
+        line-height: 171%;
+      }
+    }
+
+    .service-card__user-online {
+      top: 0.5em;
+      right: -0.04em;
+      width: 0.625em;
+      height: 0.625em;
+      border-width: 1.3px;
+    }
+  }
+
+  .offer-req {
+    padding-right: 1.8em;
+    padding-left: 1.81em;
+
+    &__price {
+      font-size: 1.5em;
+      text-align: center;
+    }
+
+    &__btn {
+      margin-top: 0;
+    }
+  }
+
+  .offer-req2 {
+    .offer-req {
+      &__price {
+        text-align: left;
+      }
+
+      &__text {
+        padding-bottom: 1.38em;
+      }
+
+      &__title {
+        font-size: 1em;
+        line-height: 175%;
+      }
+
+      &__desc {
+        max-width: 19.3125em;
+      }
+
+      &__items {
+        gap: 0.25em;
+        margin: 0.25em 0 1.25em;
+      }
+
+      &__duration {
+        img {
+          width: 1.25em;
+          margin-right: 0.875em;
+        }
+      }
+    }
+  }
+
+  .about-client {
+    padding: 1em 1.375em;
+
+    &__info {
+      margin-top: 0.875em;
+    }
+
+    .avatar {
+      width: 4.5625em;
+      height: 4.5625em;
+      margin-right: 1.19em;
+    }
+
+    &__name {
+      font-size: 1em;
+      line-height: 175%;
+    }
+
+    &__category {
+      font-size: 0.75em;
+    }
+
+    &__items {
+      padding-top: 0.875em;
+      margin-top: 0.875em;
+    }
+
+    &__item {
+      &-title,
+      &-desc {
+        font-size: 0.75em;
+        line-height: 180%;
+      }
+    }
+
+    &__btn {
+      margin-top: 0.875em;
+    }
+  }
+}
+
+@media screen and (width <= 576px) {
+  .freelancer-req {
+    &__grid {
+      grid-template-columns: 100%;
+    }
+  }
+
+  .req-answer {
+    &__content {
+      display: block;
+    }
+
+    &__price {
+      margin-top: 0.38em;
+    }
+  }
+
+  .offer-card {
+    &__content {
+      align-items: flex-start;
+    }
+
+    &__info {
+      flex-grow: 1;
+      padding-top: 0.17em;
+    }
+
+    &__items {
+      display: grid;
+      grid-template-columns: repeat(2, calc(50% - 0.5em));
+      gap: 1.17em 0.5em;
+      width: calc(100% + 4.8em);
+      margin-top: 0;
+      margin-left: -4.8em;
+    }
+
+    &__item {
+      &._rating {
+        grid-column: 1/-1;
+        padding-left: 4.8em;
+      }
+
+      &:not(:last-child) {
+        padding-right: 0;
+        margin-right: 0;
+        border: none;
+      }
+
+      &-text {
+        line-height: 233%;
+      }
+    }
+  }
+}
+
+@media screen and (width <= 427px) {
+  .offer-req {
+    padding: 0.5em 1em 0.875em;
+  }
+
+  .about-client {
+    padding: 0.81em 1em 0.875em;
+  }
+}

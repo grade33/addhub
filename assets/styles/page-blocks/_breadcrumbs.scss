@@ -1,0 +1,49 @@
+@import '../vars';
+
+.breadcrumbs {
+  padding: 1.75em 0;
+
+  li {
+    position: relative;
+    display: inline;
+    color: $gray;
+
+    &:last-child {
+      color: $black;
+    }
+
+    &:not(:first-child) {
+      margin-left: 1em;
+
+      &::before {
+        position: absolute;
+        top: 0.0625em;
+        right: 100%;
+        z-index: 1;
+        margin-right: 0.5em;
+        font-size: 0.875em;
+        line-height: 150%;
+        color: #d1d8da;
+        content: '/';
+
+        @include center;
+      }
+    }
+
+    a,
+    span {
+      font-size: 0.875em;
+      line-height: 150%;
+    }
+  }
+}
+
+@media screen and (width <= 992px) {
+  .breadcrumbs {
+    padding: 1.25em 0;
+
+    li {
+      font-size: 0.8625em;
+    }
+  }
+}

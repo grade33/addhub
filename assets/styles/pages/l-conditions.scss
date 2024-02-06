@@ -1,0 +1,60 @@
+.conditions {
+  padding: 4.5em 0 7.5em;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 19.25em calc(100% - 22.25em);
+    gap: 3em;
+  }
+
+  &__tabs {
+    position: sticky;
+    top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-left: $border;
+  }
+
+  &__tab {
+    display: flex;
+    align-items: center;
+    min-height: 2.8125em;
+    padding-left: 1.125em;
+    margin-left: -1px;
+    font-weight: 500;
+    border-left: 2px solid transparent;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $primary;
+      cursor: pointer;
+    }
+
+    &._active {
+      color: $primary;
+      border-color: $primary;
+    }
+
+    span {
+      font-size: 0.9375em;
+      line-height: 150%;
+    }
+  }
+}
+
+@media screen and (width <= 992px) {
+  .conditions {
+    padding: 2.81em 0 3.31em;
+
+    &__inner {
+      grid-template-columns: 100%;
+    }
+  }
+}
+
+@media screen and (width <= 427px) {
+  .conditions {
+    padding: 2em 0 3em;
+  }
+}

@@ -1,0 +1,127 @@
+.projects-table {
+  th,
+  td {
+    &:nth-child(1) {
+      width: auto;
+    }
+
+    &:nth-child(2) {
+      width: 19em;
+    }
+
+    &:nth-child(3) {
+      width: 10em;
+    }
+  }
+
+  .tabs {
+    margin-bottom: 1.94em;
+  }
+}
+
+.tabs-select {
+  &__show {
+    display: none;
+  }
+}
+
+@media screen and (width <= 992px) {
+  .projects-table {
+    th,
+    td {
+      width: 100% !important;
+      height: unset !important;
+      padding: 0;
+      border: none;
+
+      &:nth-child(2) {
+        position: static;
+      }
+    }
+  }
+
+  ._mob-select {
+    &._open {
+      .tabs-select__hidden {
+        pointer-events: unset;
+        opacity: 1;
+      }
+    }
+  }
+
+  .tabs-select {
+    position: relative;
+    margin-bottom: 1.06em;
+
+    &__show {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 3.125em;
+      padding: 0 1.31em;
+      border: 1px solid #d4d6fa;
+      border-radius: 0.3125em;
+
+      &::after {
+        flex-shrink: 0;
+        width: 0.375em;
+        height: 0.3125em;
+        content: '';
+        background-image: url('assets/img/tab-arrow.svg');
+
+        @include bg-img-size(100%);
+      }
+    }
+
+    &__current {
+      font-size: 1.0625em;
+      font-weight: 500;
+      line-height: 165%;
+      color: $primary;
+    }
+
+    &__hidden {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 10;
+      display: block;
+      width: 100%;
+      margin-top: 0.5em;
+      pointer-events: none;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: 100%;
+      margin: 0;
+      background-color: #fff;
+      border: $border;
+      border-radius: 0.25em;
+      box-shadow: $shadow;
+    }
+
+    .m-tab {
+      align-items: center;
+      justify-content: unset;
+      min-width: unset;
+      height: unset;
+      min-height: 2.1875em;
+      padding: 0.25em 1.875em;
+      margin: 0 !important;
+      font-weight: 300;
+      border: none;
+
+      span {
+        font-size: 0.9375em;
+        line-height: 120%;
+      }
+
+      &._active {
+        background-color: $primary-white;
+      }
+    }
+  }
+}

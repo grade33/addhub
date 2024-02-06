@@ -1,0 +1,464 @@
+.find-talent {
+  background-color: $primary-white;
+
+  &__inner {
+    position: relative;
+  }
+
+  &__content {
+    max-width: 37em;
+    padding: 5em 0;
+  }
+
+  &__desc {
+    max-width: 29em;
+    margin-top: 0.56em;
+  }
+
+  &__nav {
+    display: flex;
+    margin-top: 1.5em;
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 30.75em;
+    height: 28.25em;
+    border-radius: 0.4375em 0.4375em 0 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+    }
+  }
+}
+
+.advantages {
+  &__top {
+    text-align: center;
+  }
+
+  &__grid {
+    margin-top: 3.8em;
+  }
+}
+
+.advantage-card {
+  &__icon {
+    flex-shrink: 0;
+    height: 2.5em;
+
+    img {
+      display: block;
+      height: 100%;
+    }
+  }
+
+  &__info {
+    @include grid100gap(0.81em);
+
+    margin-top: 1.25em;
+  }
+}
+
+.trust {
+  padding: 4em 0 9em;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3.85em;
+  }
+
+  &__item {
+    height: 2.75em;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
+.advantages2 {
+  position: relative;
+  padding: 7.38em 0 6.19em;
+  overflow: hidden;
+  background-color: $primary-white;
+
+  &__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45.6%;
+    height: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    max-width: 50%;
+  }
+
+  &__top {
+    max-width: 24.5em;
+  }
+
+  &__items {
+    @include grid100gap(2.44em);
+
+    margin-top: 3.38em;
+  }
+
+  .advantage-card {
+    @media screen and (width >= 577px) {
+      display: flex;
+      align-items: flex-start;
+
+      &__icon {
+        width: 1.875em;
+        height: auto;
+
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+
+      &__info {
+        gap: 0.19em;
+        margin: 0 0 0 1.06em;
+      }
+    }
+  }
+}
+
+.blog {
+  padding: 7.5em 0 4em;
+}
+
+.blog-card {
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 0.25em;
+  box-shadow: $shadow;
+
+  &__img {
+    @include img-cover(76%);
+  }
+
+  &__content {
+    padding: 1.25em 1.875em 1.562em;
+  }
+
+  &__info {
+    margin-top: 0.31em;
+
+    @include grid100gap(0.625em);
+  }
+
+  &__title {
+    @include truncate(2);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.advantage-nums {
+  &__inner {
+    padding: 3.75em 0;
+    border-bottom: $border;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    max-width: 75em;
+    margin: 0 auto;
+  }
+}
+
+.advantage-stat {
+  text-align: center;
+}
+
+@media screen and (width <= 992px) {
+  .find-talent {
+    .container {
+      padding: 0;
+    }
+
+    &__content {
+      max-width: 100%;
+      padding: 1.19em 1.25em 1.56em;
+    }
+
+    &__img {
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding-bottom: 54.4%;
+      border-radius: 0;
+
+      img {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+
+    &__desc {
+      margin-top: 0.625em;
+    }
+
+    &__nav {
+      margin-top: 1.44em;
+
+      .m-btn {
+        width: 100%;
+      }
+    }
+  }
+
+  .advantages {
+    padding: 2.81em 0 6.63em;
+
+    &__top {
+      @include grid100gap(0.625em);
+    }
+
+    &__grid {
+      margin-top: 1.75em;
+    }
+  }
+
+  .advantage-card {
+    &__info {
+      gap: 0.625em;
+      margin-top: 0.625em;
+    }
+
+    &__title {
+      font-size: 1em;
+      line-height: 144%;
+    }
+
+    &__desc {
+      font-size: 0.875em;
+      line-height: 171%;
+    }
+  }
+
+  .trust {
+    padding: 1.75em 0 3em;
+    overflow: hidden;
+
+    .container {
+      padding: 0 3.94em;
+    }
+
+    &__items {
+      flex-wrap: wrap;
+      justify-content: unset;
+      width: calc(100% + 2.24em);
+      margin-top: 0.75em;
+    }
+
+    &__item {
+      margin: 0.5em 2.44em 0 0;
+    }
+  }
+
+  .advantages2 {
+    padding: 0;
+
+    &__content {
+      padding: 1.5em 0;
+    }
+
+    &__items {
+      gap: 1.25em;
+      margin-top: 1.75em;
+    }
+  }
+
+  .blog {
+    padding: 1.38em 0;
+  }
+
+  .blog-card {
+    &__img {
+      padding-bottom: 64.4%;
+    }
+
+    &__content {
+      padding: 0.875em 1.375em 1.375em;
+    }
+
+    &__info {
+      gap: 0.31em;
+    }
+  }
+
+  .advantage-nums {
+    &__inner {
+      padding: 1.94em 0 2.44em;
+    }
+  }
+
+  .advantage-stat {
+    &__title {
+      font-size: 2.25em;
+      line-height: 142%;
+    }
+
+    &__desc {
+      font-size: 0.75em;
+      line-height: 183%;
+    }
+  }
+}
+
+@media screen and (width <= 576px) {
+  .advantage-card {
+    text-align: center;
+
+    &__icon {
+      @include center;
+    }
+  }
+
+  .trust {
+    &__item {
+      height: 1.5em;
+    }
+  }
+
+  .advantages2 {
+    text-align: center;
+
+    .container {
+      padding: 0;
+    }
+
+    &__content {
+      max-width: 100%;
+      padding: 1.5em 1.25em;
+    }
+
+    &__img {
+      position: relative;
+      top: unset;
+      width: 100%;
+    }
+
+    .advantage-card {
+      &__icon {
+        height: 1.875em;
+      }
+
+      br {
+        display: none;
+      }
+
+      &__info {
+        gap: 0.375em;
+      }
+    }
+  }
+
+  .advantage-nums {
+    &__items {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      gap: 1.25em 0;
+    }
+  }
+
+  .advantage-stat {
+    padding: 0 0.25em;
+  }
+}
+
+@media screen and (width <= 427px) {
+  .find-talent {
+    &__img {
+      padding-bottom: 64.7%;
+    }
+  }
+
+  .advantages {
+    padding: 2.37em 0 2.5em;
+  }
+
+  .trust {
+    padding: 1.5em 0 2.5em;
+
+    .container {
+      padding: 0 1.75em;
+    }
+
+    &__items {
+      width: calc(100% + 1.94em);
+    }
+
+    &__item {
+      height: 1.625em;
+      margin: 0.5em 1.94em 0 0;
+    }
+  }
+
+  .advantages2 {
+    &__content {
+      padding-right: 0.9375em;
+      padding-left: 0.9375em;
+    }
+  }
+
+  .blog-card {
+    &__content {
+      padding: 1em 1.625em 1.625em;
+    }
+
+    &__info {
+      gap: 0.5em;
+      margin-top: 0.5em;
+    }
+  }
+
+  .advantage-nums {
+    &__inner {
+      padding: 1.31em 0 1.75em;
+    }
+
+    &__items {
+      grid-template-columns: repeat(2, calc(50% - 0.125em));
+      gap: 1.25em 0.25em;
+    }
+  }
+
+  .advantage-stat {
+    text-align: left;
+
+    &__title {
+      font-size: 1.5em;
+      line-height: 142%;
+    }
+  }
+}

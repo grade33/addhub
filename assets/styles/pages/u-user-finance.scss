@@ -1,0 +1,277 @@
+.finance-table,
+.disputes-table {
+  td {
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
+    border-bottom: $border;
+  }
+}
+
+.finance-table {
+  th,
+  td {
+    &:nth-child(1) {
+      width: 11.875em;
+    }
+  }
+}
+
+.finance-row {
+  &__title {
+    display: none;
+  }
+
+  &__desc {
+    font-size: 0.9375em;
+    line-height: 186%;
+  }
+
+  &__type {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 6.375em;
+    height: 2.125em;
+    margin-right: auto;
+    color: $primary;
+    border: 1px solid #5d68f1;
+    border-radius: 0.375em;
+
+    span {
+      font-size: 0.8125em;
+      line-height: 120%;
+    }
+
+    &._type2 {
+      background-color: $primary-white;
+      border-color: $primary-white;
+    }
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+
+    .avatar {
+      width: 1.875em;
+      height: 1.875em;
+      margin-right: 0.875em;
+    }
+  }
+
+  &__messages {
+    display: flex;
+    align-items: center;
+
+    &._disabled {
+      color: #a7a7a7;
+
+      .finance-row__count {
+        background-color: #d9d9d9;
+      }
+    }
+  }
+
+  &__count {
+    flex-shrink: 0;
+    min-width: 1.375em;
+    height: 1.375em;
+    padding: 0 0.2em;
+    margin-right: 0.375em;
+    font-weight: 700;
+    color: #fff;
+    background-color: #ff6262;
+    border-radius: 50%;
+
+    @include center;
+
+    span {
+      font-size: 0.6875em;
+      line-height: 130%;
+    }
+  }
+}
+
+.finance-stat {
+  margin-bottom: 1.875em;
+}
+
+.stat-card3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.19em 1.875em;
+  background: #fff;
+  border-radius: 0.4375em;
+
+  &__content {
+    @include grid100gap(0.375em);
+  }
+
+  &__title {
+    font-size: 0.9375em;
+    line-height: 186%;
+    color: $gray;
+  }
+
+  &__num {
+    font-size: 1.75em;
+    font-weight: 500;
+    line-height: 143%;
+  }
+
+  &__desc {
+    font-size: 0.875em;
+    line-height: 200%;
+
+    span {
+      color: $primary;
+    }
+  }
+
+  &__img {
+    margin-left: 1em;
+
+    img {
+      max-width: 4.0625em;
+      max-height: 3.8125em;
+    }
+  }
+}
+
+.disputes-table {
+  td {
+    &:last-child {
+      width: 17em;
+    }
+  }
+}
+
+@media screen and (width <= 992px) {
+  .disputes-table,
+  .finance-table {
+    padding: 0;
+    background-color: transparent;
+
+    tbody {
+      display: grid;
+      grid-template-columns: repeat(2, calc(50% - 0.625em));
+      gap: 1.25em;
+    }
+
+    tr {
+      padding: 1.19em 1.56em;
+      background: #fff;
+      border-radius: 0.4375em;
+
+      @include grid100gap(0.875em);
+    }
+
+    td {
+      width: 100% !important;
+      padding: 0;
+      border: none;
+
+      @include grid100gap(0.25em);
+    }
+  }
+
+  .finance-row {
+    &__title {
+      display: block;
+      font-size: 0.75em;
+      font-weight: 500;
+      line-height: 180%;
+    }
+
+    &__desc {
+      font-size: 0.875em;
+      line-height: 157%;
+    }
+
+    &__user {
+      .avatar {
+        width: 2.4375em;
+        height: 2.4375em;
+      }
+
+      .finance-row__desc {
+        font-size: 0.8125em;
+        font-weight: 400;
+      }
+    }
+
+    &__messages {
+      padding: 0.625em 0;
+    }
+  }
+
+  .finance-stat {
+    grid-template-columns: repeat(4, calc(25% - 3em / 4));
+    gap: 1em;
+  }
+
+  .stat-card3 {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: unset;
+    padding: 0.9375em 0.9375em 1.81em;
+
+    &__img {
+      order: -1;
+      margin: 0 0 0.54em;
+
+      img {
+        max-width: unset;
+        height: 2.53em;
+        max-height: unset;
+      }
+    }
+
+    &__content {
+      gap: 0;
+    }
+
+    &__title {
+      margin-bottom: 2em;
+      font-size: 0.75em;
+      line-height: 167%;
+    }
+
+    &__num {
+      font-size: 1.375em;
+    }
+
+    &__desc {
+      font-size: 0.75em;
+      line-height: 167%;
+    }
+  }
+
+  .disputes-table {
+    tr {
+      padding-top: 0.84em;
+      padding-bottom: 0.84em;
+    }
+
+    td {
+      &:nth-child(3) {
+        order: -1;
+        padding: 0.625em 0;
+      }
+    }
+  }
+}
+
+@media screen and (width <= 576px) {
+  .disputes-table,
+  .finance-table {
+    tbody {
+      grid-template-columns: 100%;
+    }
+  }
+
+  .finance-stat {
+    grid-template-columns: repeat(2, calc(50% - 0.5em));
+  }
+}

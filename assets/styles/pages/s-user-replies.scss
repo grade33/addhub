@@ -1,0 +1,392 @@
+.m-table {
+  padding: 1.75em 1.75em 2em;
+  background: #fff;
+  border-radius: 0.4375em;
+
+  table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+  }
+
+  th {
+    padding: 1.31em 1.875em;
+    font-weight: 500;
+    text-align: left;
+    background-color: $primary-white;
+
+    &:nth-child(1) {
+      border-radius: 0.375em 0 0 0.375em;
+    }
+
+    &:last-child {
+      border-radius: 0 0.375em 0.375em 0;
+    }
+
+    span {
+      display: block;
+      font-size: 1.0625em;
+      line-height: 165%;
+    }
+  }
+
+  td {
+    padding: 1.875em;
+  }
+}
+
+.replies {
+  th,
+  td {
+    &:nth-child(2) {
+      width: 14em;
+    }
+
+    &:last-child {
+      width: 11.5em;
+    }
+  }
+}
+
+.reply-row {
+  &__info {
+    display: flex;
+    align-items: center;
+  }
+
+  .avatar {
+    width: 3.75em;
+    height: 3.75em;
+    margin-right: 1.25em;
+  }
+
+  &__props {
+    display: flex;
+    margin-top: 0.3125em;
+  }
+
+  &__prop {
+    display: flex;
+    align-items: center;
+    color: $gray;
+
+    img {
+      width: 1.25em;
+      margin-right: 0.5em;
+    }
+
+    span {
+      font-size: 0.875em;
+      line-height: 143%;
+    }
+
+    &:not(:last-child) {
+      padding-right: 1.375em;
+      margin-right: 0.9375em;
+      border-right: $border;
+    }
+  }
+
+  &__action {
+    display: flex;
+  }
+
+  &__btn {
+    position: relative;
+
+    @include last-m(0 0.3125em 0 0);
+
+    .m-btn {
+      width: 2.5em;
+      height: 2.5em;
+      padding: 0;
+      border-radius: 0.3125em;
+
+      svg {
+        width: 1.25em;
+      }
+
+      &::before {
+        left: -115%;
+        transform: skew(50deg) scale(1.5);
+      }
+
+      &:hover {
+        path {
+          fill: #fff;
+        }
+      }
+    }
+
+    &:hover {
+      .tooltip {
+        pointer-events: unset;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 99%;
+  left: 0;
+  padding-bottom: 0.31em;
+  color: #fff;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s;
+
+  &__inner {
+    width: 5.3125em;
+    height: 1.6471em;
+    clip-path: polygon(
+      4.706% 0%,
+      4.706% 0%,
+      3.943% 0.194%,
+      3.218% 0.755%,
+      2.543% 1.654%,
+      1.927% 2.858%,
+      1.378% 4.339%,
+      0.908% 6.065%,
+      0.525% 8.007%,
+      0.24% 10.132%,
+      0.062% 12.412%,
+      0% 14.815%,
+      0% 74.074%,
+      0% 74.074%,
+      0.062% 76.477%,
+      0.24% 78.757%,
+      0.525% 80.882%,
+      0.908% 82.823%,
+      1.378% 84.55%,
+      1.927% 86.03%,
+      2.543% 87.235%,
+      3.218% 88.134%,
+      3.943% 88.695%,
+      4.706% 88.889%,
+      18.577% 88.889%,
+      18.577% 88.889%,
+      18.746% 88.908%,
+      18.913% 88.965%,
+      19.078% 89.059%,
+      19.24% 89.189%,
+      19.399% 89.356%,
+      19.553% 89.557%,
+      19.703% 89.792%,
+      19.847% 90.061%,
+      19.985% 90.363%,
+      20.117% 90.697%,
+      21.989% 95.8%,
+      21.989% 95.8%,
+      22.266% 96.451%,
+      22.564% 96.958%,
+      22.877% 97.319%,
+      23.201% 97.536%,
+      23.529% 97.608%,
+      23.858% 97.536%,
+      24.182% 97.319%,
+      24.495% 96.958%,
+      24.793% 96.451%,
+      25.07% 95.8%,
+      26.942% 90.697%,
+      26.942% 90.697%,
+      27.073% 90.363%,
+      27.212% 90.061%,
+      27.356% 89.792%,
+      27.506% 89.557%,
+      27.66% 89.356%,
+      27.819% 89.189%,
+      27.981% 89.059%,
+      28.146% 88.965%,
+      28.313% 88.908%,
+      28.482% 88.889%,
+      95.294% 88.889%,
+      95.294% 88.889%,
+      96.057% 88.695%,
+      96.782% 88.134%,
+      97.457% 87.235%,
+      98.073% 86.03%,
+      98.622% 84.55%,
+      99.092% 82.823%,
+      99.475% 80.882%,
+      99.76% 78.757%,
+      99.938% 76.477%,
+      100% 74.074%,
+      100% 14.815%,
+      100% 14.815%,
+      99.938% 12.412%,
+      99.76% 10.132%,
+      99.475% 8.007%,
+      99.092% 6.065%,
+      98.622% 4.339%,
+      98.073% 2.858%,
+      97.457% 1.654%,
+      96.782% 0.755%,
+      96.057% 0.194%,
+      95.294% 0%,
+      4.706% 0%
+    );
+    background-color: $primary;
+
+    @include center;
+  }
+}
+
+.notifications {
+  padding: 0 2.81em 2.25em;
+  background-color: #fff;
+  border-radius: 0.4375em;
+
+  &__nav {
+    display: flex;
+    padding: 1.25em 0;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    color: $primary;
+
+    svg {
+      width: 1.25em;
+      margin-right: 0.375em;
+    }
+
+    span {
+      font-size: 0.9375em;
+    }
+
+    &:hover {
+      color: $black;
+
+      path {
+        fill: $black;
+      }
+    }
+  }
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  padding: 1.25em 0;
+  font-weight: 300;
+  border-top: $border;
+
+  &:first-child {
+    border-top: none;
+  }
+
+  .avatar {
+    width: 2.5em;
+    height: 2.5em;
+    margin-right: 1.06em;
+  }
+}
+
+@media screen and (width <= 992px) {
+  .m-table {
+    table {
+      display: block;
+    }
+
+    thead {
+      display: none;
+    }
+  }
+
+  .replies {
+    padding: 0;
+    background-color: transparent;
+
+    tbody {
+      display: grid;
+      grid-template-columns: repeat(2, calc(50% - 0.6875em));
+      gap: 1.375em;
+    }
+  }
+
+  .reply-row {
+    position: relative;
+    padding: 1.12em;
+    background: #fff;
+    border-radius: 0.4375em;
+
+    @include grid100gap(0.94em);
+
+    td {
+      padding: 0;
+
+      &:nth-child(2) {
+        position: absolute;
+        top: 1.12em;
+        right: 1.38em;
+        display: flex;
+        align-items: center;
+        width: unset;
+        height: 3.125em;
+      }
+    }
+
+    &__info {
+      display: block;
+    }
+
+    .avatar {
+      width: 3.125em;
+      height: 3.125em;
+      margin: 0 0 0.625em;
+    }
+
+    &__title {
+      font-size: 1em;
+      line-height: 138%;
+    }
+
+    &__props {
+      @include grid100gap(0.06em);
+    }
+
+    &__prop {
+      font-weight: 300;
+
+      img {
+        margin-right: 0.6875em;
+      }
+
+      span {
+        font-size: 0.75em;
+        line-height: 233%;
+      }
+
+      &:not(:last-child) {
+        padding-right: 0;
+        margin-right: 0;
+        border: none;
+      }
+    }
+  }
+
+  .notifications {
+    padding: 0 1.25em 1.56em;
+
+    &__btn {
+      span {
+        font-size: 0.875em;
+      }
+    }
+  }
+
+  .notification-item {
+    padding: 0.875em 0;
+  }
+}
+
+@media screen and (width <= 576px) {
+  .replies {
+    tbody {
+      grid-template-columns: 100%;
+    }
+  }
+}

@@ -1,0 +1,582 @@
+.freelancer-top {
+  margin-top: -1em;
+
+  &__inner {
+    position: relative;
+    padding: 3.5em 4.25em;
+    margin-top: 1.44em;
+    background-color: $secondary;
+    background-image: url('assets/img/freelancer-bg.webp');
+    background-position: center;
+    background-size: cover;
+    border-radius: 1em;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1.44em;
+
+    .icon-btn {
+      margin-left: 1.625em;
+    }
+  }
+
+  .page-top__text {
+    max-width: 57em;
+  }
+}
+
+.freelancer-info {
+  display: flex;
+  align-items: center;
+  max-width: 52.5625em;
+  color: #fff;
+
+  .avatar {
+    position: relative;
+    width: 7.5em;
+    height: 7.5em;
+    margin-right: 1.25em;
+  }
+
+  .service-card__user-online {
+    top: 0.8125em;
+    right: 0.3125em;
+    width: 1em;
+    height: 1em;
+    border-width: 0.125em;
+  }
+
+  &__text {
+    @include grid100gap(0.5em);
+  }
+
+  &__name {
+    font-size: 1.25em;
+    font-weight: 500;
+    line-height: 125%;
+  }
+
+  &__wrap {
+    display: flex;
+    margin-top: 1em;
+  }
+
+  &__item,
+  &__review {
+    img {
+      width: 0.875em;
+      margin-right: 0.625em;
+    }
+  }
+
+  &__item {
+    margin-left: 3.94em;
+
+    img {
+      width: 1.25em;
+    }
+  }
+}
+
+.freelancer-info2 {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  width: 23.125em;
+  padding: 1em 1.875em 1.7em;
+  background-color: #fff;
+  border: $border;
+  border-radius: 0.5em;
+  box-shadow: $shadow;
+
+  &__btn {
+    width: 100%;
+    margin-top: 1em;
+    box-shadow: 0 0.3125em 1.25em rgb(94 103 255 / 30%);
+  }
+}
+
+.prop {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.625em 0;
+  border-bottom: $border;
+
+  &__title,
+  &__desc {
+    font-size: 0.9375em;
+    line-height: 186%;
+  }
+
+  &__title {
+    font-weight: 300;
+    color: $gray;
+  }
+
+  &__desc {
+    font-weight: 500;
+  }
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+
+  &:hover {
+    color: $blue;
+  }
+
+  &__round {
+    flex-shrink: 0;
+    width: 2.25em;
+    height: 2.25em;
+    margin-right: 0.625em;
+    border: $border;
+    border-radius: 50%;
+    box-shadow: $shadow;
+    transition: inherit;
+
+    @include center;
+
+    svg,
+    img {
+      width: 0.75em;
+    }
+  }
+
+  &__text {
+    font-size: 0.9375em;
+    line-height: 130%;
+  }
+
+  &._added {
+    path {
+      fill: red;
+      stroke: red;
+    }
+  }
+}
+
+.freelancer {
+  position: relative;
+  z-index: 5;
+  padding: 2.69em 0 7.42em;
+  overflow: hidden;
+
+  &._overflow-unset {
+    overflow: unset;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: calc(100% - 23.125em) 23.125em;
+    gap: 5em 0;
+    justify-content: space-between;
+    padding-right: 2.5em;
+  }
+
+  &__inner {
+    max-width: 57.6875em;
+  }
+
+  &__col2 {
+    margin-top: -10.2em;
+  }
+
+  .article-item {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.about-freelancer {
+  margin-top: 3.125em;
+
+  .text {
+    margin-top: 1.25em;
+  }
+}
+
+.text {
+  h3 {
+    font-size: 1.25em;
+    font-weight: 500;
+
+    @include last-m(0 0 1em);
+  }
+
+  p {
+    font-size: 0.9375em;
+    font-weight: 300;
+    line-height: 187%;
+
+    @include last-m(0 0 1.25em);
+  }
+
+  hr {
+    display: block;
+    height: 4.25em;
+    opacity: 0;
+  }
+}
+
+.freelancer-services {
+  padding-top: 2.19em;
+  margin-top: 2em;
+  border-top: $border;
+
+  .product-slider {
+    margin-top: 1em;
+
+    .swiper {
+      &-slide {
+        @media screen and (width >= 993px) {
+          width: 22.3125em;
+          padding-right: 1.75em;
+        }
+      }
+    }
+  }
+}
+
+.review-rating {
+  display: flex;
+  align-items: center;
+  margin-top: 1.75em;
+
+  &__balls {
+    @include grid100gap(0.625em);
+
+    flex-grow: 1;
+    max-width: 25.375em;
+  }
+}
+
+.review-stat {
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 18.75em;
+  padding: 3.25em 1em;
+  margin-right: 3.56em;
+  text-align: center;
+  background-color: $primary-white;
+  border-radius: 0.625em;
+
+  @include center;
+
+  &__num {
+    font-size: 3.75em;
+    font-weight: 700;
+    color: $primary;
+  }
+
+  &__info {
+    margin-top: 0.1875em;
+  }
+}
+
+.ball {
+  display: grid;
+  grid-template-columns: 4.875em calc(100% - 6.875em) 2em;
+  align-items: center;
+
+  &__type {
+    font-size: 0.9375em;
+    line-height: 187%;
+  }
+
+  &__progress {
+    position: relative;
+    height: 0.25em;
+    background-color: $primary-white;
+    border-radius: 0.25em;
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: $primary;
+      border-radius: inherit;
+    }
+  }
+
+  &__count {
+    font-size: 0.875em;
+    line-height: 200%;
+    color: $gray;
+    text-align: right;
+  }
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  max-width: 32%;
+
+  &__icon {
+    flex-shrink: 0;
+    width: 3em;
+    margin-right: 1.19em;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (width <= 992px) {
+  .freelancer-top {
+    padding-top: 0.5em;
+
+    &._pb85 {
+      .page-top__inner {
+        padding-bottom: 5.3125em;
+      }
+    }
+
+    .container {
+      padding: 0;
+    }
+
+    &__inner {
+      padding: 1.94em 1.25em;
+      margin: 0;
+      background-image: unset;
+      border-radius: 0;
+    }
+
+    &__nav {
+      display: none;
+    }
+
+    .page-top__text {
+      padding-right: 1.25em;
+      padding-left: 1.25em;
+      text-align: left;
+    }
+  }
+
+  .freelancer-info {
+    align-items: flex-start;
+    width: 100%;
+
+    .avatar {
+      width: 4.4375em;
+      height: 4.4375em;
+      margin-right: 1.5625em;
+    }
+
+    &__content {
+      flex-grow: 1;
+    }
+
+    &__name {
+      font-size: 1em;
+    }
+
+    &__prof {
+      font-size: 0.75em;
+    }
+
+    &__wrap {
+      flex-wrap: wrap;
+      margin-top: 0;
+    }
+
+    &__items {
+      justify-content: space-between;
+      width: calc(100% + 6em);
+      margin: 1.375em 0 0 -6em;
+    }
+
+    &__item,
+    &__review {
+      span {
+        font-size: 0.75em;
+        line-height: 200%;
+      }
+    }
+
+    &__review {
+      width: 100%;
+
+      img {
+        width: 0.75em;
+        margin-right: 0.5em;
+      }
+    }
+
+    &__item {
+      margin: 0;
+
+      img {
+        width: 0.875em;
+      }
+    }
+  }
+
+  .freelancer-info2 {
+    position: static;
+    width: 100%;
+    padding: 0.25em 1.19em 0.9375em;
+    margin: 1.375em 0 -6.8125em;
+
+    &__btn {
+      margin-top: 0.82em;
+    }
+  }
+
+  .prop {
+    padding: 0.625em 0;
+
+    &__title,
+    &__desc {
+      font-size: 0.75em;
+    }
+  }
+
+  .freelancer {
+    padding: 7em 0 3.1875em;
+
+    &._pt0 {
+      padding-top: 0;
+    }
+
+    &__grid {
+      grid-template-columns: 100%;
+      padding: 0;
+    }
+
+    &__col2 {
+      order: -1;
+      margin-top: -3.8em;
+      margin-right: 0;
+    }
+  }
+
+  .about-freelancer {
+    margin-top: 2.9em;
+
+    .text {
+      margin-top: 0.81em;
+    }
+  }
+
+  .text {
+    h3 {
+      @include last-m(0 0 0.85em);
+    }
+
+    p {
+      font-size: 0.875em;
+      line-height: 171%;
+    }
+
+    hr {
+      height: 1.85em;
+    }
+  }
+
+  .freelancer-services {
+    padding-top: 0;
+    margin-top: 3em;
+    border-top: none;
+  }
+
+  .stat {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 1.72em 1em;
+  }
+
+  .stat-card {
+    max-width: unset;
+
+    &__icon {
+      width: 2.4375em;
+      margin-right: 1.56em;
+    }
+
+    &__title {
+      font-size: 0.875em;
+      line-height: 130%;
+    }
+
+    &__desc {
+      font-size: 0.75em;
+    }
+  }
+}
+
+@media screen and (width <= 576px) {
+  .review-rating {
+    display: block;
+  }
+
+  .review-stat {
+    width: 100%;
+    margin: 0 0 1em;
+  }
+
+  .ball {
+    &__type {
+      font-size: 0.875em;
+    }
+  }
+}
+
+@media screen and (width <= 427px) {
+  .freelancer-top {
+    &__inner {
+      padding: 1.31em 0.9375em;
+    }
+
+    .page-top__text {
+      padding-right: 0.9375em;
+      padding-left: 0.9375em;
+    }
+  }
+
+  .freelancer-info {
+    &__items {
+      margin-top: 0.875em;
+
+      @include grid100gap(0.25em);
+    }
+  }
+
+  .freelancer-info2 {
+    padding: 0.25em 0.875em 0.9375em;
+    margin: 1.25em 0 -5.4375em;
+
+    &__btn {
+      margin-top: 0.875em;
+    }
+  }
+
+  .freelancer {
+    padding-top: 6.5em;
+
+    &__grid {
+      gap: 2.5em;
+    }
+  }
+
+  .stat {
+    grid-template-columns: 100%;
+    gap: 1.12em;
+    padding: 0 2.5em;
+  }
+}

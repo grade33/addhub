@@ -1,0 +1,28 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:nuxt/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "ignorePatterns": ["public/**/*"], // убрать
+  "globals": {
+    // Другие глобальные переменные...
+    "$fetch": "readonly",
+    "useRuntimeConfig": "readonly"
+  },
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}
