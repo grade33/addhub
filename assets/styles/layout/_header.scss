@@ -1,4 +1,6 @@
 .header-top {
+  position: relative;
+  z-index: 21;
   display: flex;
   align-items: center;
   padding: 1.3125em 0;
@@ -338,11 +340,6 @@
   }
 }
 
-.header-action2,
-.mob-menu {
-  display: none;
-}
-
 .mob-menu {
   &__links {
     @include grid100gap(0.125em);
@@ -406,6 +403,11 @@
 }
 
 .header-action2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
   &__btn {
     position: relative;
     width: 1.5em;
@@ -440,30 +442,72 @@
   }
 }
 
+._open-menu {
+  .burger {
+    ._view1 {
+      opacity: 0;
+    }
+
+    ._view2 {
+      opacity: 1;
+    }
+  }
+
+  .admin-menu,
+  .mob-menu {
+    transform: translateX(0);
+  }
+}
+
+.burger {
+  position: relative;
+  flex-shrink: 0;
+  width: 1.25em;
+  height: 1.25em;
+  margin-left: 1.25em;
+
+  @include center;
+
+  img {
+    @include center-absolute;
+
+    width: 100%;
+  }
+
+  ._view2 {
+    width: 1em;
+    opacity: 0;
+  }
+}
+
+.admin-menu,
+.mob-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  display: block;
+  width: 100%;
+  height: $vh;
+  padding: 4.625em 0 1.25em;
+  overflow-y: auto;
+  background-color: #fff;
+  transition: all 0.4s;
+  transform: translateX(-100%);
+}
+
+.mob-menu {
+  z-index: -1;
+}
+
 @media screen and (width <= 992px) {
   .master-menu,
   .master-nav,
-  .header-action,
   .header-bottom {
     display: none;
   }
 
-  ._open-menu {
-    .burger {
-      ._view1 {
-        opacity: 0;
-      }
 
-      ._view2 {
-        opacity: 1;
-      }
-    }
-
-    .admin-menu,
-    .mob-menu {
-      transform: translateX(0);
-    }
-  }
 
   .header-top {
     padding: 1em 0;
@@ -473,51 +517,6 @@
       z-index: 21;
       width: 8.625em;
     }
-  }
-
-  .header-action2 {
-    position: relative;
-    z-index: 21;
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-  }
-
-  .burger {
-    position: relative;
-    flex-shrink: 0;
-    width: 1.25em;
-    height: 1.25em;
-    margin-left: 1.25em;
-
-    @include center;
-
-    img {
-      @include center-absolute;
-
-      width: 100%;
-    }
-
-    ._view2 {
-      width: 1em;
-      opacity: 0;
-    }
-  }
-
-  .admin-menu,
-  .mob-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 20;
-    display: block;
-    width: 100%;
-    height: $vh;
-    padding: 4.625em 0 1.25em;
-    overflow-y: auto;
-    background-color: #fff;
-    transition: all 0.4s;
-    transform: translateX(-100%);
   }
 }
 

@@ -1,4 +1,5 @@
-.m-section {
+html body .m-page {
+  .m-section {
   padding: 7.5em 0;
 
   &__top {
@@ -125,6 +126,7 @@
 
   &__container {
     width: calc(100% + 1.75em);
+    overflow: visible;
   }
 
   &__wrapper {
@@ -548,4 +550,5 @@
       }
     }
   }
+}
 }

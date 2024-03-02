@@ -22,7 +22,7 @@ html {
   width: 100%;
 }
 
-.m-page {
+body {
   width: calc(100vw - (100vw - 100%));
   overflow-x: hidden;
   font-family: $font1;
@@ -52,6 +52,13 @@ a {
   &:hover {
     color: $primary;
   }
+}
+
+.error-message {
+  display: inline-block;
+  margin-top: 7px;
+  font-size: 0.9em;
+  color: #e74c3c;
 }
 
 @media screen and (width <= 992px) {

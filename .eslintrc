@@ -17,12 +17,8 @@
     "prettier"
   ],
   "ignorePatterns": ["public/**/*"], // убрать
-  "globals": {
-    // Другие глобальные переменные...
-    "$fetch": "readonly",
-    "useRuntimeConfig": "readonly"
-  },
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "no-undef": "warn"
   }
 }

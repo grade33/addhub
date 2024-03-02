@@ -5,6 +5,7 @@ let toggleSearchButtons = document.querySelectorAll('._toggle-search');
 
 if (header) {
   burger.onclick = function () {
+    console.log(3)
     body.classList.toggle('_open-menu');
     body.classList.toggle('fixed-body');
   };

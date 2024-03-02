@@ -25,6 +25,10 @@
     transform-origin: top left;
   }
 
+  &:disabled {
+    opacity: 0.5;
+  }
+
   &:focus {
     box-shadow: none;
   }
@@ -41,7 +45,8 @@
     z-index: 2;
   }
 
-  &:hover {
+  &:not(&:disabled):hover,
+  &:not(&:disabled):focus-visible {
     &::before {
       width: 200%;
       height: 100%;
@@ -57,7 +62,8 @@
     background-color: #7078ff;
   }
 
-  &:hover {
+  &:not(&:disabled):hover,
+  &:not(&:disabled):focus-visible {
     color: #fff;
   }
 }
@@ -70,7 +76,8 @@
     background-color: color.adjust(#d64c4c, $lightness: -10%);
   }
 
-  &:hover {
+  &:not(&:disabled):hover,
+  &:not(&:disabled):focus-visible {
     color: #fff;
   }
 }
@@ -79,7 +86,8 @@
   color: $black;
   background-color: #fff;
 
-  &:hover {
+  &:not(&:disabled):hover,
+  &:not(&:disabled):focus-visible {
     color: $black;
   }
 
@@ -92,7 +100,8 @@
   color: #fff;
   background-color: #505050;
 
-  &:hover {
+  &:not(&:disabled):hover,
+  &:not(&:disabled):focus-visible {
     color: #fff;
   }
 
@@ -105,7 +114,8 @@
   color: $primary;
   border: 2px solid $primary;
 
-  &:hover {
+  &:not(&:disabled):hover,
+  &:not(&:disabled):focus-visible {
     color: $primary;
   }
 
@@ -118,7 +128,8 @@
 .m-btn-blue3 {
   color: $primary;
 
-  &:hover {
+  &:not(&:disabled):hover,
+  &:not(&:disabled):focus-visible {
     color: #fff;
   }
 
@@ -136,7 +147,8 @@
 }
 
 .hover-fill-primary {
-  &:hover {
+  &:not(&:disabled):hover,
+  &:not(&:disabled):focus-visible {
     path {
       fill: $primary;
     }

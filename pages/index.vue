@@ -1,9 +1,5 @@
-<template></template>
-
-<script>
-export default {
-  meta: {
-    layout: 'custom',
-  },
-};
-</script>
+<template>
+  <SectionsIndexMain />
+  <SectionsIndexCategories />
+  <SectionsIndexServices />
+</template>

@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     '@nuxtjs/stylelint-module',
     '@pinia/nuxt',
     '@vee-validate/nuxt',
+    'nuxt-swiper',
   ],
   css: ['~/assets/styles/style.scss'],
   runtimeConfig: {
@@ -22,5 +23,9 @@ export default defineNuxtConfig({
       apiBase: process.env.BASE_URL,
     },
   },
-  plugins: ['~/plugins/fetch.js'],
+  plugins: [
+    '~/plugins/fetch.js',
+    '~/plugins/toast.js',
+    '~/plugins/auth-init.js',
+  ],
 });
