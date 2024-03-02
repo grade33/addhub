@@ -128,7 +128,7 @@ export default {
     ...mapActions(useAuthStore, { authRegister: 'register' }),
     async register() {
       await this.authRegister(this.regDetails);
-      useNuxtApp().$router.push('/');
+      useNuxtApp().$router.push('/login');
     },
     handleSubmit() {
       this.register();
